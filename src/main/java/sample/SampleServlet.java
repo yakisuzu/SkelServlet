@@ -15,6 +15,6 @@ public class SampleServlet extends SuperServlet {
 		SampleBean bean = new SampleBean();
 		bean.setId("iddddddd");
 		bean.setName("nameeee");
-		req.setAttribute("SampleBean", bean);
+		req.setAttribute("sampleBean", bean);
 	}
 }
