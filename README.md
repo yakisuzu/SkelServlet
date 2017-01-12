@@ -2,7 +2,7 @@
 - java1.8
 
 # url
-https://localhost:8444/SkelServlet/SampleServlet
+https://localhost:8444/skel-servlet/SampleServlet
 
 # ssl環境
 ## key作成
