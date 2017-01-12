@@ -1,4 +1,4 @@
-package sample;
+package servlet.sample;
 
 public class SampleBean {
 	private String id;
