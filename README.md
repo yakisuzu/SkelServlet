@@ -1,14 +1,11 @@
-# 環境
-- java1.8
+# maven
+`mvn package`  
+`java -jar target/servlet-1.0.0.war`  
 
 # url
-https://localhost:8444/skel-servlet/SampleServlet
+https://localhost:8080/sample/SampleServlet  
 
-# ssl環境
-## key作成
-keytool -genkey -alias tomcat -keyalg RSA -keystore /usr/local/Cellar/tomcat/8.0.9/libexec/conf/keystore.jks
-
-## tomcat server.xml
-<pre>
-&lt;Connector port="8444" protocol="HTTP/1.1" SSLEnabled="true" maxThreads="150" scheme="https" secure="true" clientAuth="false" sslProtocol="TLS" keystoreFile="/usr/local/Cellar/tomcat/8.0.9/libexec/conf/keystore.jks" keystorePass="passwd" /&gt;
-</pre>
+# memo
+[Maven Assembly Pluginで実行可能jarをつくる](http://kiririmode.hatenablog.jp/entry/20160429/1461855600)  
+[Jetty組み込み方メモ](http://qiita.com/opengl-8080/items/673bfbfeebe6c6db8578)  
+[Mavenでwarと実行可能jarを同時にビルドする](http://qiita.com/mocchii/items/1660929982246c7f135b)  
