@@ -9,7 +9,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <finalName>servlet-${version}</finalName>
+    <finalName>servlet-${project.version}</finalName>
     <java.version>1.8</java.version>
     <java.mainClass>jetty.Main</java.mainClass>
   </properties>
@@ -94,9 +94,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
+          <descriptors>
+            <descriptor>src/maven/assembly/assembly.xml</descriptor>
+          </descriptors>
           <archive>
             <manifest>
               <mainClass>${java.mainClass}</mainClass>
@@ -118,6 +118,19 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.0.0</version>
+        <configuration>
+          <!--
+          <descriptors>
+            <descriptor>src/maven/assembly/assembly.xml</descriptor>
+          </descriptors>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>${java.mainClass}</mainClass>
+            </manifest>
+          </archive>
+          -->
+        </configuration>
         <executions>
           <execution>
             <id>make-war</id>
@@ -127,11 +140,6 @@
             </goals>
             <configuration>
               <failOnMissingWebXml>false</failOnMissingWebXml>
-              <webResources>
-                <resource>
-                  <directory>src/main/webapp</directory>
-                </resource>
-              </webResources>
             </configuration>
           </execution>
         </executions>
