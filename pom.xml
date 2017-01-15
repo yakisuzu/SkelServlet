@@ -5,28 +5,15 @@
   <groupId>sample</groupId>
   <artifactId>skel-servlet</artifactId>
   <version>1.0.0</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <finalName>servlet-${project.version}</finalName>
     <java.version>1.8</java.version>
-    <java.mainClass>jetty.Main</java.mainClass>
   </properties>
 
   <dependencies>
-    <!-- jetty -->
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-webapp</artifactId>
-      <version>9.4.0.v20161208</version>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>jetty-annotations</artifactId>
-      <version>9.4.0.v20161208</version>
-    </dependency>
-
     <!-- servlet -->
     <!--
     <dependency>
@@ -54,12 +41,6 @@
 
   <build>
     <finalName>${finalName}</finalName>
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
 
     <plugins>
       <plugin>
@@ -90,30 +71,6 @@
           <downloadSources>true</downloadSources>
           <downloadJavadocs>true</downloadJavadocs>
         </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <descriptors>
-            <descriptor>src/maven/assembly/assembly.xml</descriptor>
-          </descriptors>
-          <archive>
-            <manifest>
-              <mainClass>${java.mainClass}</mainClass>
-            </manifest>
-          </archive>
-        </configuration>
-        <executions>
-          <execution>
-            <id>uber</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
 
       <plugin>

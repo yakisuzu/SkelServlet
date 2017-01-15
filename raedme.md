@@ -1,9 +1,9 @@
 # maven
 `mvn package`  
-`java -jar target/servlet-1.0.0.war`  
+`java -jar {jetty} target/servlet-1.0.0.war`  
 
 # url
-https://localhost:8080/sample/SampleServlet  
+https://localhost:8080/SampleServlet  
 
 # memo
 [Maven Assembly Pluginで実行可能jarをつくる](http://kiririmode.hatenablog.jp/entry/20160429/1461855600)  
